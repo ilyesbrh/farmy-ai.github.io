@@ -371,6 +371,66 @@ html:not([data-scroll="0"]) .nav-bar {
   margin-bottom: 32px;
 }
 
+.testimonial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 120px);
+  margin: auto;
+}
+
+.testimonial > .title {
+  width: 100%;
+  text-align: left;
+}
+
+.testimonial .owl-carousel {
+  width: 100%;
+}
+
+.testimonial .owl-carousel .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 337px;
+  height: 211px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+
+.testimonial .owl-carousel .card .quote {
+  margin: auto;
+  text-align: center;
+}
+
+.testimonial .owl-carousel .card .separation {
+  height: 2px;
+  background-color: #8b959e;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .contact-us {
   position: relative;
   display: -webkit-box;
@@ -663,7 +723,7 @@ body {
   color: #000000;
 }
 
-.section-title, .about-us > .title, .our-team > .title, .how-it-work > .title, .contact-us > .title {
+.section-title, .about-us > .title, .our-team > .title, .how-it-work > .title, .testimonial > .title, .contact-us > .title {
   font-family: Poppins;
   font-size: 20px;
   font-weight: 600;
@@ -677,7 +737,7 @@ body {
   position: relative;
 }
 
-.section-title:after, .about-us > .title:after, .our-team > .title:after, .how-it-work > .title:after, .contact-us > .title:after {
+.section-title:after, .about-us > .title:after, .our-team > .title:after, .how-it-work > .title:after, .testimonial > .title:after, .contact-us > .title:after {
   content: "";
   position: absolute;
   left: 0px;
@@ -712,7 +772,7 @@ body {
   color: #000000;
 }
 
-.testmonial-card-title {
+.testmonial-card-title, .testimonial .owl-carousel .card .mkhailati {
   font-family: Poppins;
   font-size: 18px;
   font-weight: 600;
@@ -843,7 +903,7 @@ body {
   color: #000000;
 }
 
-.testmonial-text {
+.testmonial-text, .testimonial .owl-carousel .card .quote {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;

@@ -37,10 +37,9 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
 
-/* Select dropdown */
-
 $(function () {
 
+    /* contact us role dropdown */
     $('.dropdown > .caption').on('click', function () {
         $(this).parent().toggleClass('open');
     });
@@ -62,4 +61,22 @@ $(function () {
         }
     });
 
+    /* Owl carousel testimonial */
+    $('.owl-carousel').owlCarousel({
+        stagePadding: 20,
+        loop: false,
+        margin: 0,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1100: {
+                items: 3
+            }
+        }
+    })
 });
