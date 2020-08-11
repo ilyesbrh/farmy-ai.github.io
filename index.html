@@ -41,18 +41,34 @@
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <nav class="nav-bar">
         <img class="logo" src="assets/images/logo.png" alt="">
-        <a class="link active" href="#home">Home</a>
-        <a class="link" href="#howItWork">How it work</a>
-        <a class="link" href="#aboutUs">About us</a>
-        <button class="call-to-action" href="#contactUs">Contact us</button>
-        <img src="assets/svg/menu.svg" alt="" class="menu-button">
+        <a class="link" data-scroll-nav="0">Home</a>
+        <a class="link" data-scroll-nav="1">About us</a>
+        <a class="link" data-scroll-nav="2">How it work</a>
+        <button class="call-to-action" data-scroll-nav="3">Contact us</button>
+        <img src="assets/svg/menu.svg" onclick="toggleSideNav()" alt="" class="menu-button">
     </nav>
 
+    <!-- SideNavbar -->
+
+    <div id="mySidenav" class="sidenav">
+        <div class="top-bar">
+            <img class="logo" src="assets/images/logo.png" alt="">
+            <img src="assets/svg/Icon ionic-ios-close.svg" onclick="toggleSideNav()" alt="" class="menu-button">
+
+        </div>
+        <a class="link first" data-scroll-nav="0">Home</a>
+        <a class="link" data-scroll-nav="1">About us</a>
+        <a class="link" data-scroll-nav="2">How it work</a>
+        <button class="call-to-action" data-scroll-nav="3">Contact us</button>
+    </div>
+
+
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" data-scroll-index="0">
         <img class="background-image" src="assets/images/header bg.svg" alt="">
         <div class="content">
             <div class="title">AI applied to make farming
@@ -65,7 +81,7 @@
         </div>
     </header>
     <!-- Body -->
-    <section class="about-us">
+    <section class="about-us" data-scroll-index="1">
         <div class="title">About us</div>
         <div class="content-container">
             <img src="assets/svg/aboutus.svg" alt="" class="illustration">
@@ -80,7 +96,7 @@
             </div>
         </div>
     </section>
-    <section class="how-it-work">
+    <section class="how-it-work" data-scroll-index="2">
         <h2 class="title">How it work</h2>
         <div class="step reverse">
             <img class="illustration" src="assets/svg/feature 1.svg" alt="">
@@ -202,7 +218,7 @@
             </div>
         </div>
     </section>
-    <section class="contact-us">
+    <section class="contact-us" data-scroll-index="3">
         <h2 class="title">Contact Us</h2>
         <img src="assets/svg/contact-farmy.svg" alt="" class="illustration">
         <div class="form">
@@ -238,6 +254,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="assets/lib/navbar/index.js"></script>
     <script src='script.js'></script>
 
 </body>

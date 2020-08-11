@@ -31,6 +31,7 @@
 .nav-bar .link {
   margin-right: 3%;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-bar .link.active {
@@ -97,6 +98,131 @@ html:not([data-scroll="0"]) .nav-bar {
   html:not([data-scroll="0"]) .nav-bar {
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 20;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #f8fcff;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 16px;
+  /* Place content 60px from the top */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidenav .top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.sidenav .top-bar .logo {
+  width: 128px;
+  height: 37px;
+  margin-left: 2.7%;
+}
+
+.sidenav .top-bar .menu-button {
+  margin-right: 8.4%;
+  cursor: pointer;
+}
+
+.sidenav .link {
+  margin-top: 42px;
+  text-decoration: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sidenav .link.first {
+  margin-top: 68px;
+}
+
+.sidenav .link.active {
+  position: relative;
+}
+
+.sidenav .link.active:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2.5px;
+  width: 18px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #a5da76;
+}
+
+.sidenav .call-to-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 169.7px;
+  height: 38.9px;
+  margin-top: 62px;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+  background-color: #a5da76;
+  cursor: pointer;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
   }
 }
 
@@ -450,6 +576,7 @@ html:not([data-scroll="0"]) .nav-bar {
   margin: auto;
   padding-left: 18px;
   padding-right: 18px;
+  padding-top: 32px;
 }
 
 .how-it-work > .title {
@@ -535,7 +662,7 @@ html:not([data-scroll="0"]) .nav-bar {
           flex-direction: column;
   width: calc(100% - 64px);
   max-width: 1100px;
-  height: 80vh;
+  height: 500px;
   margin: auto;
 }
 
@@ -616,6 +743,7 @@ html:not([data-scroll="0"]) .nav-bar {
   margin: auto;
   max-width: 1100px;
   margin-bottom: 120px;
+  padding-top: 68px;
 }
 
 .contact-us > .title {
@@ -837,14 +965,14 @@ body {
   overflow-x: hidden;
 }
 
-.ripple, .nav-bar .logo, .nav-bar .call-to-action, .nav-bar .menu-button {
+.ripple, .nav-bar .logo, .nav-bar .call-to-action, .nav-bar .menu-button, .sidenav .top-bar .logo, .sidenav .top-bar .menu-button, .sidenav .call-to-action {
   cursor: pointer;
   background-position: center;
   -webkit-transition: background 0.8s;
   transition: background 0.8s;
 }
 
-.ripple:active, .nav-bar .logo:active, .nav-bar .call-to-action:active, .nav-bar .menu-button:active {
+.ripple:active, .nav-bar .logo:active, .nav-bar .call-to-action:active, .nav-bar .menu-button:active, .sidenav .top-bar .logo:active, .sidenav .top-bar .menu-button:active, .sidenav .call-to-action:active {
   background-color: #ccc;
   background-size: 100%;
   -webkit-transition: background 0s;
@@ -961,7 +1089,7 @@ body {
   background-color: #a5da76;
 }
 
-.navbar, .nav-bar .link {
+.navbar, .nav-bar .link, .sidenav .link {
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 600;
@@ -973,7 +1101,7 @@ body {
   color: #c0c0c1;
 }
 
-.navbar-selected, .nav-bar .link.active {
+.navbar-selected, .nav-bar .link.active, .sidenav .link.active {
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 600;
@@ -1021,7 +1149,7 @@ body {
   color: #000000;
 }
 
-.button-nav, .nav-bar .call-to-action, .contact-us .form .send {
+.button-nav, .nav-bar .call-to-action, .sidenav .call-to-action, .contact-us .form .send {
   font-family: Poppins;
   font-size: 17px;
   font-weight: 600;

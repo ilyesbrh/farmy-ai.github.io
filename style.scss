@@ -42,6 +42,8 @@ $bg-for-hero-section: #f8fcff;
     margin-right: 3%;
 
     text-decoration: none;
+
+    cursor: pointer;
     &.active {
       @extend .navbar-selected;
 
@@ -112,6 +114,114 @@ html:not([data-scroll="0"]) .nav-bar {
   }
   html:not([data-scroll="0"]) .nav-bar {
     box-shadow: none;
+  }
+}
+
+// sideNav
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 20; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: $bg-for-hero-section; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 16px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .logo {
+      @extend .ripple;
+
+      width: 128px;
+      height: 37px;
+
+      margin-left: 2.7%;
+    }
+    .menu-button {
+      @extend .ripple;
+      margin-right: 8.4%;
+      cursor: pointer;
+    }
+  }
+  .link {
+    @extend .navbar;
+
+    margin-top: 42px;
+
+    text-decoration: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    &.first {
+      margin-top: 68px;
+    }
+    &.active {
+      @extend .navbar-selected;
+
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -2.5px;
+        width: 18px;
+        height: 3px;
+        border-radius: 1px;
+        background-color: $Maincolor;
+      }
+    }
+  }
+  .call-to-action {
+    @extend .ripple;
+    @extend .button-nav;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 169.7px;
+    height: 38.9px;
+
+    margin-top: 62px;
+    border: none;
+    border-radius: 6px;
+
+    box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+    background-color: $Maincolor;
+
+    cursor: pointer;
+  }
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
   }
 }
 
@@ -447,6 +557,7 @@ html:not([data-scroll="0"]) .nav-bar {
   margin: auto;
   padding-left: 18px;
   padding-right: 18px;
+  padding-top: 32px;
 
   > .title {
     @extend .section-title;
@@ -518,7 +629,7 @@ html:not([data-scroll="0"]) .nav-bar {
   width: calc(100% - 64px);
   max-width: 1100px;
 
-  height: 80vh;
+  height: 500px;
 
   margin: auto;
   > .title {
@@ -597,6 +708,8 @@ html:not([data-scroll="0"]) .nav-bar {
   max-width: 1100px;
 
   margin-bottom: 120px;
+
+  padding-top: 68px;
   > .title {
     @extend .section-title;
 

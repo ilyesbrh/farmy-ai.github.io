@@ -78,6 +78,35 @@ $(function () {
                 items: 3
             }
         }
-    })
+    });
+
+    /* scroll navigation */
+    $.scrollIt({
+        topOffset: -52,
+        onPageChange: () => {
+            closeNav();
+        },
+    });
 });
 
+/* SideNav */
+var isOpen = false;
+
+function toggleSideNav() {
+    if (isOpen) {
+        closeNav();
+    } else {
+        openNav();
+    }
+    isOpen = !isOpen;
+}
+
+/* Open the sidenav */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
