@@ -12,7 +12,5 @@
   ],
   "author": "ilies boutouh , farmy.ai",
   "license": "ISC",
-  "dependencies": {
-    "sidenavjs": "^1.0.26"
-  }
+  "dependencies": {}
 }

@@ -66,6 +66,10 @@
         <button class="call-to-action" data-scroll-nav="3">Contact us</button>
     </div>
 
+    <!-- Links -->
+    <a id="mobile_app_route" href="https://play.google.com/store/apps/details?id=ai.farmy.app" target="_blank"
+        style="display: none;"></a>
+    <a id="facebook_group" href="https://www.facebook.com/groups/farmyapp/" target="_blank" style="display: none;"></a>
 
     <!-- HEADER -->
     <header class="header" data-scroll-index="0">
@@ -74,9 +78,9 @@
             <div class="title">AI applied to make farming
                 smart</div>
             <div class="actions">
-                <button class="primary">Download app <img src="assets/images/playstore.svg" width="24px" height="24px"
-                        alt=""></button>
-                <button class="secondary">Or learn more ></button>
+                <button class="primary" onclick="document.getElementById('mobile_app_route').click()">Download app <img
+                        src="assets/images/playstore.svg" width="24px" height="24px" alt=""></button>
+                <button class="secondary" data-scroll-nav="1">Or learn more ></button>
             </div>
         </div>
     </header>
@@ -243,7 +247,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="social-media">
-            <img src="assets/svg/Icon awesome-facebook-f.svg" alt="">
+            <img src="assets/svg/Icon awesome-facebook-f.svg"
+                onclick="document.getElementById('facebook_group').click()" alt="">
             <img src="assets/svg/Icon awesome-instagram.svg" alt="">
             <img src="assets/svg/Icon feather-twitter.svg" alt="">
             <img src="assets/svg/Icon awesome-linkedin-in.svg" alt="">
