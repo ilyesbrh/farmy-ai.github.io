@@ -98,15 +98,16 @@ function toggleSideNav() {
     } else {
         openNav();
     }
-    isOpen = !isOpen;
 }
 
 /* Open the sidenav */
 function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
+    isOpen = true;
 }
 
 /* Close/hide the sidenav */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    isOpen = false;
 }
