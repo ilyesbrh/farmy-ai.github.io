@@ -37,6 +37,8 @@
 
     <link rel="stylesheet" type='text/css' href="assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" type='text/css' href="assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/lib/anime.css/animate.css" />
+
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 
@@ -45,10 +47,10 @@
     <!-- NAVBAR -->
     <nav class="nav-bar">
         <img class="logo" src="assets/images/logo.png" alt="">
-        <a class="link" data-scroll-nav="0">Home</a>
-        <a class="link" data-scroll-nav="1">About us</a>
-        <a class="link" data-scroll-nav="2">How it work</a>
-        <button class="call-to-action" data-scroll-nav="3">Contact us</button>
+        <a class="link translate" data-scroll-nav="0">Home</a>
+        <a class="link translate" data-scroll-nav="1">About us</a>
+        <a class="link translate" data-scroll-nav="2">How it work</a>
+        <button class="call-to-action translate" data-scroll-nav="3">Contact us</button>
         <img src="assets/svg/menu.svg" onclick="toggleSideNav()" alt="" class="menu-button">
     </nav>
 
@@ -60,10 +62,10 @@
             <img src="assets/svg/Icon ionic-ios-close.svg" onclick="toggleSideNav()" alt="" class="menu-button">
 
         </div>
-        <a class="link first" data-scroll-nav="0">Home</a>
-        <a class="link" data-scroll-nav="1">About us</a>
-        <a class="link" data-scroll-nav="2">How it work</a>
-        <button class="call-to-action" data-scroll-nav="3">Contact us</button>
+        <a class="link first translate" data-scroll-nav="0">Home</a>
+        <a class="link translate" data-scroll-nav="1">About us</a>
+        <a class="link translate" data-scroll-nav="2">How it work</a>
+        <button class="call-to-action translate" data-scroll-nav="3">Contact us</button>
     </div>
 
     <!-- Links -->
@@ -72,27 +74,28 @@
     <a id="facebook_group" href="https://www.facebook.com/groups/farmyapp/" target="_blank" style="display: none;"></a>
 
     <!-- HEADER -->
-    <header class="header" data-scroll-index="0">
-        <img class="background-image" src="assets/images/header bg.svg" alt="">
+    <header class="header " data-scroll-index="0">
+        <img class="background-image wow fadeIn" data-wow-duration="3s" data-wow-delay=".2s"
+            src="assets/images/header bg.svg" alt="">
         <div class="content">
-            <div class="title">AI applied to make farming
-                smart</div>
+            <div class="title translate">AI applied to make farming smart</div>
             <div class="actions">
-                <button class="primary" onclick="document.getElementById('mobile_app_route').click()">Download app <img
-                        src="assets/images/playstore.svg" width="24px" height="24px" alt=""></button>
-                <button class="secondary" data-scroll-nav="1">Or learn more ></button>
+                <button class="primary translate" onclick="document.getElementById('mobile_app_route').click()">Download
+                    app <img src="assets/images/playstore.svg" width="24px" height="24px" alt=""></button>
+                <button class="secondary translate" data-scroll-nav="1">Or learn more ></button>
             </div>
         </div>
     </header>
     <!-- Body -->
     <section class="about-us" data-scroll-index="1">
-        <div class="title">About us</div>
-        <div class="content-container">
-            <img src="assets/svg/aboutus.svg" alt="" class="illustration">
-            <div class="content">
-                <div class="title">A leading Team On the Smart
+        <div class="title translate">About us</div>
+        <div class="content-container ">
+            <img src="assets/svg/aboutus.svg" alt="" class="illustration wow fadeInLeft" data-wow-duration="4s">
+            <div class="content wow fadeInRight" data-wow-duration="4s">
+                <div class="title translate">A leading Team On the Smart
                     farms</div>
-                <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                <div class="description translate">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod
                     tempor invidunt ut labore et dolore
                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                     Stet
@@ -101,22 +104,21 @@
         </div>
     </section>
     <section class="how-it-work" data-scroll-index="2">
-        <h2 class="title">How it work</h2>
+        <h2 class="title translate">How it work</h2>
         <div class="step reverse">
             <img class="illustration" src="assets/svg/feature 1.svg" alt="">
-            <div class="content">
-                <div class="title">Take picture(s) of the infected area</div>
-                <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                    eirmod
-                    tempor invidunt ut labore et dolore
-                    magna aliquyam </div>
+            <div class="content wow fadeInRight" data-wow-duration="4s">
+                <div class="title translate">Take picture(s) of the infected area</div>
+                <div class="description translate">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod tempor invidunt ut labore et doloremagna aliquyam </div>
             </div>
         </div>
         <div class="step ">
             <img class="illustration" src="assets/svg/feature 2.svg" alt="">
-            <div class="content">
-                <div class="title">Take picture(s) of the infected area</div>
-                <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+            <div class="content wow fadeInRight" data-wow-duration="4s">
+                <div class="title translate">Take picture(s) of the infected area</div>
+                <div class="description translate">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy
                     eirmod
                     tempor invidunt ut labore et dolore
                     magna aliquyam </div>
@@ -124,9 +126,10 @@
         </div>
         <div class="step reverse">
             <img class="illustration" src="assets/svg/feature 3.svg" alt="">
-            <div class="content">
-                <div class="title">Take picture(s) of the infected area</div>
-                <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+            <div class="content wow fadeInRight" data-wow-duration="4s">
+                <div class="title translate">Take picture(s) of the infected area</div>
+                <div class="description translate">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy
                     eirmod
                     tempor invidunt ut labore et dolore
                     magna aliquyam </div>
@@ -134,20 +137,21 @@
         </div>
         <div class="step ">
             <img class="illustration" src="assets/svg/feature 4.svg" alt="">
-            <div class="content">
-                <div class="title">Take picture(s) of the infected area</div>
-                <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+            <div class="content wow fadeInRight" data-wow-duration="4s">
+                <div class="title translate">Take picture(s) of the infected area</div>
+                <div class="description translate">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy
                     eirmod
                     tempor invidunt ut labore et dolore
                     magna aliquyam </div>
             </div>
         </div>
     </section>
-    <section class="testimonial">
-        <h2 class="title">Testimonials</h2>
+    <section class="testimonial wow fadeIn">
+        <h2 class="title translate">Testimonials</h2>
         <div class="owl-carousel">
             <div class="card">
-                <div class="quote">"il est la in n'est pas la , ya khoya ya khoya"</div>
+                <div class="quote ">"il est la in n'est pas la , ya khoya ya khoya"</div>
                 <div class="separation"></div>
                 <div class="mkhailati">Ilies bourouh</div>
             </div>
@@ -169,51 +173,52 @@
         </div>
     </section>
     <section class="our-team">
-        <h2 class="title">Our team</h2>
+        <h2 class="title translate">Our team</h2>
         <div class="content-container">
 
             <div class="content">
-                <div class="title">A Team of monkeys and non coders</div>
-                <div class="quote">" Talent wins games, but teamwork and intelligence win championships. "</div>
-                <div class="writer">ilies bourouh</div>
+                <div class="title translate">A Team of monkeys and non coders</div>
+                <div class="quote translate">" Talent wins games, but teamwork and intelligence win championships. "
+                </div>
+                <div class="writer translate">ilies bourouh</div>
             </div>
             <div class="avatars">
                 <div class="avatar">
                     <img src="assets/svg/avtar1.svg" alt="">
-                    <div class="name">Ilies bourouh</div>
-                    <div class="position">Web developer</div>
+                    <div class="name translate">Ilies bourouh</div>
+                    <div class="position translate">Web developer</div>
                     <div class="social-media">
                         <img class="link" src="assets/svg/linkedin.svg" alt="">
                     </div>
                 </div>
                 <div class="avatar">
                     <img src="assets/svg/avtar1.svg" alt="">
-                    <div class="name">Ilies bourouh</div>
-                    <div class="position">Web developer</div>
+                    <div class="name translate">Ilies bourouh</div>
+                    <div class="position translate">Web developer</div>
                     <div class="social-media">
                         <img class="link" src="assets/svg/linkedin.svg" alt="">
                     </div>
                 </div>
                 <div class="avatar">
                     <img src="assets/svg/avtar1.svg" alt="">
-                    <div class="name">Ilies bourouh</div>
-                    <div class="position">Web developer</div>
+                    <div class="name translate">Ilies bourouh</div>
+                    <div class="position translate">Web developer</div>
                     <div class="social-media">
                         <img class="link" src="assets/svg/linkedin.svg" alt="">
                     </div>
                 </div>
                 <div class="avatar">
                     <img src="assets/svg/avtar1.svg" alt="">
-                    <div class="name">Ilies bourouh</div>
-                    <div class="position">Web developer</div>
+                    <div class="name translate">Ilies bourouh</div>
+                    <div class="position translate">Web developer</div>
                     <div class="social-media">
                         <img class="link" src="assets/svg/linkedin.svg" alt="">
                     </div>
                 </div>
                 <div class="avatar">
                     <img src="assets/svg/avtar1.svg" alt="">
-                    <div class="name">Ilies bourouh</div>
-                    <div class="position">Web developer</div>
+                    <div class="name translate">Ilies bourouh</div>
+                    <div class="position translate">Web developer</div>
                     <div class="social-media">
                         <img class="link" src="assets/svg/linkedin.svg" alt="">
                     </div>
@@ -222,25 +227,24 @@
             </div>
         </div>
     </section>
-    <section class="contact-us" data-scroll-index="3">
-        <h2 class="title">Contact Us</h2>
+    <section class="contact-us wow bounce" data-wow-duration="2s" data-wow-delay="5s" data-scroll-index="3">
+        <h2 class="title translate">Contact Us</h2>
         <img src="assets/svg/contact-farmy.svg" alt="" class="illustration">
         <div class="form">
-            <input type="text" class="input half" placeholder="First name">
-            <input type="text" class="input half" placeholder="Last name">
+            <input type="text" class="input half translate">
+            <input type="text" class="input half translate">
             <div class="dropdown full">
-                <div class="caption">Your role</div>
+                <div class="caption translate">Your role</div>
                 <div class="list">
-                    <div class="item">Option 1</div>
-                    <div class="item">Option 2</div>
-                    <div class="item">Option 3</div>
-                    <div class="item">Option 4</div>
-                    <div class="item">Option 5</div>
+                    <div class="item translate">Option 1</div>
+                    <div class="item translate">Option 2</div>
+                    <div class="item translate">Option 3</div>
+                    <div class="item translate">Option 4</div>
                 </div>
             </div>
 
-            <textarea class="text-area input full " type="text" rows="6" placeholder="Your message"></textarea>
-            <button class="send">Send</button>
+            <textarea class="text-area input full translate" type="text" rows="6"></textarea>
+            <button class="send translate">Send</button>
         </div>
 
     </section>
@@ -254,12 +258,14 @@
             <img src="assets/svg/Icon awesome-linkedin-in.svg" alt="">
         </div>
         <div class="divider"></div>
-        <span class="copyrights">CopyRigth 2020 Farmy.ai</span>
+        <span class="copyrights translate">CopyRigth 2020 Farmy.ai</span>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="assets/lib/navbar/index.js"></script>
+    <script src="assets/lib/wow.js scroll animation/wow.min.js"></script>
+
     <script src='script.js'></script>
 
 </body>

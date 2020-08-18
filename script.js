@@ -39,6 +39,56 @@ storeScroll();
 
 $(function () {
 
+    let lang = 'en';
+    if (/^fr\b/.test(navigator.language)) {
+        lang = 'fr';
+    } else if (/^ar\b/.test(navigator.language)) {
+
+    } else {
+    }
+
+    // Loading language
+    $.getJSON('./assets/language/' + lang + '.json', function (res) {
+
+        let translation = Object.values(res);
+
+        console.log(translation);
+
+        let elements = $('.translate');
+
+        for (let i = 0; i < 4; i++) {
+            elements[i].innerHTML = translation[i];
+            elements[i + 4].innerHTML = translation[i];
+        }
+
+        for (let i = 4; i < translation.length; i++) {
+
+            if (i === 42 || i === 35 || i === 36)
+                elements[i + 4].placeholder = translation[i];
+            else
+                elements[i + 4].innerHTML = translation[i];
+        }
+
+
+    });
+
+    // on scroll animations
+    var wow = new WOW(
+        {
+            boxClass: 'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 70,          // distance to the element when triggering the animation (default is 0)
+            mobile: false,       // trigger animations on mobile devices (default is true)
+            live: false,       // act on asynchronously loaded content (default is true)
+            callback: function (box) {
+                console.log(box);
+            },
+            scrollContainer: null,    // optional scroll container selector, otherwise use window,
+            resetAnimation: true,     // reset animation on end (default is true)
+        }
+    );
+    wow.init();
+
     /* contact us role dropdown */
     $('.dropdown > .caption').on('click', function () {
         $(this).parent().toggleClass('open');
