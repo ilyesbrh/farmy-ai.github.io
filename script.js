@@ -40,12 +40,26 @@ storeScroll();
 $(function () {
 
     let lang = 'en';
-    if (/^fr\b/.test(navigator.language)) {
-        lang = 'fr';
+    if (!!localStorage.getItem(lang)) {
+
+        /* Store language */
+        lang = localStorage.getItem(lang);
+
     } else if (/^ar\b/.test(navigator.language)) {
 
-    } else {
+        lang = 'ar';
+
+    } else if (/^fr\b/.test(navigator.language)) {
+
+        lang = 'fr';
+
     }
+
+
+    /* language button */
+    document.getElementsByClassName('language')[0].textContent = lang.toLocaleUpperCase();
+    document.getElementsByClassName('language')[1].textContent = lang.toLocaleUpperCase();
+
 
     // Loading language
     $.getJSON('./assets/language/' + lang + '.json', function (res) {
@@ -56,17 +70,18 @@ $(function () {
 
         let elements = $('.translate');
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 7; i++) {
             elements[i].innerHTML = translation[i];
-            elements[i + 4].innerHTML = translation[i];
+            elements[i + 7].innerHTML = translation[i];
         }
 
-        for (let i = 4; i < translation.length; i++) {
+        for (let i = 7; i < translation.length; i++) {
 
-            if (i === 42 || i === 35 || i === 36)
-                elements[i + 4].placeholder = translation[i];
+            // for contact us inputs placeholder
+            if (i === 45 || i === 38 || i === 39)
+                elements[i + 7].placeholder = translation[i];
             else
-                elements[i + 4].innerHTML = translation[i];
+                elements[i + 7].innerHTML = translation[i];
         }
 
 
@@ -81,7 +96,6 @@ $(function () {
             mobile: false,       // trigger animations on mobile devices (default is true)
             live: false,       // act on asynchronously loaded content (default is true)
             callback: function (box) {
-                console.log(box);
             },
             scrollContainer: null,    // optional scroll container selector, otherwise use window,
             resetAnimation: true,     // reset animation on end (default is true)
@@ -160,4 +174,40 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     isOpen = false;
+}
+
+function changeLang(lang) {
+
+    /* language button */
+    document.getElementsByClassName('language')[0].textContent = lang.toLocaleUpperCase();
+    document.getElementsByClassName('language')[1].textContent = lang.toLocaleUpperCase();
+
+    /* Store language */
+    localStorage.setItem('lang', lang);
+    // Loading language
+    $.getJSON('./assets/language/' + lang + '.json', function (res) {
+
+        let translation = Object.values(res);
+
+        console.log(translation);
+
+        let elements = $('.translate');
+
+        for (let i = 0; i < 7; i++) {
+            elements[i].innerHTML = translation[i];
+            elements[i + 7].innerHTML = translation[i];
+        }
+
+        for (let i = 7; i < translation.length; i++) {
+
+            // for contact us inputs placeholder
+            if (i === 45 || i === 38 || i === 39)
+                elements[i + 7].placeholder = translation[i];
+            else
+                elements[i + 7].innerHTML = translation[i];
+        }
+
+
+    });
+
 }

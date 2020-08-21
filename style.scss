@@ -98,7 +98,7 @@ html:not([data-scroll="0"]) .nav-bar {
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 776px) {
   .nav-bar {
     position: relative;
     .link {
@@ -649,16 +649,16 @@ html:not([data-scroll="0"]) .nav-bar {
       align-items: flex-start;
       justify-content: space-between;
 
-      width: calc(100vw - 194px);
+      width: calc(100vw - 150px);
 
       @media (min-width: 600px) {
-        width: calc(50vw - 144px);
+        width: calc(50vw - 80px);
       }
       @media (min-width: 1000px) {
-        width: calc(33vw - 114px);
+        width: calc(33vw - 55px);
       }
       @media (min-width: 1100px) {
-        width: 265px;
+        width: 320px;
       }
 
       height: 211px;
@@ -806,7 +806,7 @@ html:not([data-scroll="0"]) .nav-bar {
   align-items: center;
   justify-content: space-between;
 
-  width: calc(100% - 62px);
+  width: calc(100%);
 
   padding: 31px;
 
