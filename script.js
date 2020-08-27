@@ -39,22 +39,56 @@ storeScroll();
 
 $(function () {
 
-    let lang = 'en';
-    if (!!localStorage.getItem(lang)) {
-        /* Store language */
-        lang = localStorage.getItem(lang);
-        document.body.style.direction = 'ltr';
-    } else if (/^ar\b/.test(navigator.language)) {
-        lang = 'ar';
-        document.body.style.direction = 'rtl';
+    let lang = localStorage.getItem('lang');
+
+    if (!!lang) { // if language is already set setup from local storage variable
+
+        if (/^ar\b/.test(lang)) { // if setted
+
+            document.body.style.direction = 'rtl'; // if arabic then change direction to rtl
+
+            lang = 'ar'; // set language button text
+
+            // 4 is for RTL style and 5 for LTR
+            document.styleSheets[5].disabled = false;
+            document.styleSheets[4].disabled = true;
+
+        } else {
+
+            document.body.style.direction = 'ltr';
+
+            lang = lang.toLocaleUpperCase(); //change it to uppercase for langauge button text
+
+            document.styleSheets[5].disabled = true;
+            document.styleSheets[4].disabled = false;
+
+        }
+
+    } else if (/^ar\b/.test(navigator.language)) { // if language not set yet then look for language in navigator.language
+
+        document.body.style.direction = 'rtl'; // if arabic then change direction to rtl
+
+        lang = 'ar'; // set language button text
+
+        // 4 is for RTL style and 5 for LTR
+        document.styleSheets[5].disabled = false;
+        document.styleSheets[4].disabled = true;
+
     } else if (/^fr\b/.test(navigator.language)) {
         document.body.style.direction = 'ltr';
-        lang = 'fr';
+        lang = 'fr'.toLocaleUpperCase();
+        document.styleSheets[5].disabled = true;
+        document.styleSheets[4].disabled = false;
+    } else {
+        /* Store language */
+        document.body.style.direction = 'ltr';
+        lang = 'eng'.toLocaleUpperCase();
+        document.styleSheets[5].disabled = true;
+        document.styleSheets[4].disabled = false;
     }
 
     /* language button */
-    document.getElementsByClassName('language')[0].textContent = lang.toLocaleUpperCase();
-    document.getElementsByClassName('language')[1].textContent = lang.toLocaleUpperCase();
+    document.getElementsByClassName('language')[0].textContent = document.getElementsByClassName('language')[1].textContent = lang === 'ar' ? 'ض' : lang;
 
 
     // Loading language
@@ -174,10 +208,6 @@ function closeNav() {
 
 function changeLang(lang) {
 
-    /* language button */
-    document.getElementsByClassName('language')[0].textContent = lang.toLocaleUpperCase();
-    document.getElementsByClassName('language')[1].textContent = lang.toLocaleUpperCase();
-
     /* Store language */
     localStorage.setItem('lang', lang);
     // Loading language
@@ -202,8 +232,32 @@ function changeLang(lang) {
             else
                 elements[i + 7].innerHTML = translation[i];
         }
-
-
     });
+
+
+    if (/^ar\b/.test(lang)) { // if setted
+
+        document.body.style.direction = 'rtl'; // if arabic then change direction to rtl
+
+        lang = 'ض'; // set language button text
+
+        // 4 is for RTL style and 5 for LTR
+        document.styleSheets[5].disabled = false;
+        document.styleSheets[4].disabled = true;
+
+    } else {
+
+        document.body.style.direction = 'ltr';
+
+        lang = lang.toLocaleUpperCase(); //change it to uppercase for langauge button text
+
+        document.styleSheets[5].disabled = true;
+        document.styleSheets[4].disabled = false;
+
+    }
+
+    /* language button */
+    document.getElementsByClassName('language')[0].textContent = document.getElementsByClassName('language')[1].textContent = lang;
+
 
 }
