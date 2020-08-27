@@ -41,20 +41,16 @@ $(function () {
 
     let lang = 'en';
     if (!!localStorage.getItem(lang)) {
-
         /* Store language */
         lang = localStorage.getItem(lang);
-
+        document.body.style.direction = 'ltr';
     } else if (/^ar\b/.test(navigator.language)) {
-
         lang = 'ar';
-
+        document.body.style.direction = 'rtl';
     } else if (/^fr\b/.test(navigator.language)) {
-
+        document.body.style.direction = 'ltr';
         lang = 'fr';
-
     }
-
 
     /* language button */
     document.getElementsByClassName('language')[0].textContent = lang.toLocaleUpperCase();
