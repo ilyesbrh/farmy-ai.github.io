@@ -80,7 +80,7 @@ $(function () {
         document.styleSheets[5].disabled = true;
         document.styleSheets[4].disabled = false;
     } else {
-        /* Store language */
+        /* Stored language */
         document.body.style.direction = 'ltr';
         lang = 'eng'.toLocaleUpperCase();
         document.styleSheets[5].disabled = true;
@@ -92,7 +92,7 @@ $(function () {
 
 
     // Loading language
-    $.getJSON('./assets/language/' + lang + '.json', function (res) {
+    $.getJSON('./assets/language/' + lang.toLocaleLowerCase() + '.json', function (res) {
 
         let translation = Object.values(res);
 
