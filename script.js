@@ -39,7 +39,8 @@ storeScroll();
 
 $(function () {
 
-    let lang = 'en' || localStorage.getItem('lang');
+    // let lang = localStorage.getItem('lang');
+    let lang = 'en';
 
     if (!!lang) { // if language is already set setup from local storage variable
 
